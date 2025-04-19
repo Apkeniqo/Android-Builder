@@ -1,0 +1,45 @@
+[
+  {
+    "kernelSource": {
+      "name": "dream2qlte",
+      "repo": "https://github.com/Apkeniqo/s8-chinese-custom-kernel",
+      "branch": "main",
+      "device": "dream2qlte",
+      "defconfig": "dreamqlte_chn_open_defconfig"
+    },
+    "toolchains": [
+      {
+        "name": "proton-clang",
+        "repo": "https://github.com/kdrag0n/proton-clang",
+        "branch": "master",
+        "binaryEnv": ["./bin"]
+      },
+      {
+        "name": "",
+        "url": "",
+        "binaryEnv": []
+      }
+    ],
+    "enableCcache": true,
+    "params": {
+      "ARCH": "arm64",
+      "CC": "clang",
+      "externalCommands": {
+        "CROSS_COMPILE": "proton-clang/bin/aarch64-linux-gnu-",
+        "CROSS_COMPILE_ARM32": "proton-clang/bin/arm-linux-gnueabi-",
+        "CROSS_COMPILE_COMPAT": "",
+        "CLANG_TRIPLE": "aarch64-linux-gnu-"
+      }
+    },
+    "AnyKernel3": {
+      "use": true,
+      "release": true,
+      "custom": {
+        "repo": "",
+        "branch": ""
+      }
+    },
+    "enableKernelSU": false,
+    "enableLXC": false
+  }
+]
